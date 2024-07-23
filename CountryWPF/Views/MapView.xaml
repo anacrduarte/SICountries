@@ -1,0 +1,227 @@
+﻿<UserControl x:Class="CountryWPF.Views.MapView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CountryWPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="600"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+    
+    <Grid Grid.Row="0">
+        
+        <Image Source="/Image/World2.jpg" Stretch="Uniform"/>
+
+        <Canvas>
+            <TextBlock Canvas.Left="515" Canvas.Top="234" Text="África" Style="{StaticResource BoldTextBlockStyle}"/>
+            <TextBlock Canvas.Left="151" Canvas.Top="137" Text="América do Norte" Style="{StaticResource BoldTextBlockStyle}"/>
+            <TextBlock Canvas.Left="264" Canvas.Top="317" Text="América do Sul" Style="{StaticResource BoldTextBlockStyle}"/>
+            <TextBlock Canvas.Left="534" Canvas.Top="129" Text="Europa" Style="{StaticResource BoldTextBlockStyle}"/>
+            <TextBlock Canvas.Left="801" Canvas.Top="148" Text="Ásia" Style="{StaticResource BoldTextBlockStyle}" RenderTransformOrigin="12.837,-3.987"/>
+            <TextBlock Canvas.Left="844" Canvas.Top="322" Text="Oceania" Style="{StaticResource BoldTextBlockStyle}" RenderTransformOrigin="2.272,5.17"/>
+            <TextBlock Canvas.Left="448" Canvas.Top="535" Text="Antártida" Style="{StaticResource BoldTextBlockStyle}" RenderTransformOrigin="2.272,5.17"/>
+            <Rectangle x:Name="americaNorth" Canvas.Left="72" Canvas.Top="35" Width="371" Height="218" Fill="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="201" RadiusY="201" MouseEnter="americaNorth_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-21.022"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="AmericaTooltip" Style="{StaticResource CustomToolTipStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Países da América do Norte"/>
+                            <ListBox x:Name="AmericaListBox"
+                                       Style="{StaticResource ListBoxStyleMap}"
+                                       ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+            <Rectangle x:Name="americaSouth" Canvas.Left="216" Canvas.Top="248" Width="201" Height="234" Fill="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" RadiusX="117" RadiusY="117" MouseEnter="americaSouth_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5">
+
+
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="AmericaSouthTooltip" Style="{StaticResource CustomToolTipStyle}">
+                        <StackPanel >
+                            <TextBlock Text="Países da América do Sul"/>
+
+                            <ListBox x:Name="AmericaSouthListBox"
+                                     Style="{StaticResource ListBoxStyleMap}"
+                                    ItemTemplate="{StaticResource ListBoxItemTemplateMap}"
+                                    />
+
+                        </StackPanel>
+
+                    </ToolTip>
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+            <Rectangle x:Name="europe" Canvas.Left="459" Canvas.Top="75" Width="116" Height="110" Fill="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" RadiusX="41.042" RadiusY="41.042" MouseEnter="europe_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90.605"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="EuropeTooltip" Style="{StaticResource CustomToolTipStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Países da Europa(1)"/>
+                            <ListBox x:Name="EuropeListBox"
+                                      Style="{StaticResource ListBoxStyleMap}"
+                                    ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+
+                    </ToolTip>
+
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+            <Rectangle x:Name="europe1" Canvas.Left="564" Canvas.Top="81" Width="101" Height="90" Fill="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" RadiusX="41.042" RadiusY="41.042" MouseEnter="europe1_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90.605"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="EuropeTooltip1" Style="{StaticResource CustomToolTipStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Países da Europa(2)"/>
+                            <ListBox x:Name="EuropeListBox1"
+                            Style="{StaticResource ListBoxStyleMap}"
+                          ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+
+                    </ToolTip>
+
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+
+            <Rectangle x:Name="asia" Canvas.Left="758" Canvas.Top="-53" Width="140" Height="335" Fill="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" RadiusX="96.789" RadiusY="96.789" MouseEnter="asia_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.66"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="AsiaTooltip" Style="{StaticResource CustomToolTipStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Países da Ásia(2)"/>
+                            <ListBox x:Name="AsiaListBox"
+                                     Style="{StaticResource ListBoxStyleMap}"
+                                     ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+
+            <Rectangle x:Name="asia2" Canvas.Left="759" Canvas.Top="80" Width="99" Height="291" Fill="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="96.789" RadiusY="96.789" MouseEnter="asia2_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.072,0.459">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="89.66"/>
+                        <TranslateTransform X="21.646" Y="-16.774"/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="Asia2Tooltip" Style="{StaticResource CustomToolTipStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Países da Ásia(1)"/>
+                            <ListBox x:Name="Asia2ListBox"
+                                       Style="{StaticResource ListBoxStyleMap}"
+                                       ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+            <Rectangle x:Name="Africa" Canvas.Left="485" Canvas.Top="299" Width="169" Height="120" Fill="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" MouseEnter="Africa_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5" RadiusX="107.5" RadiusY="107.5">
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="AfricaTooltip" Style="{StaticResource CustomToolTipStyle}">
+
+                        <StackPanel>
+                            <TextBlock Text="Países de África(2)"/>
+                            <ListBox x:Name="AfricaListBox"
+                                     Style="{StaticResource ListBoxStyleMap}"
+                                    ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+            <Rectangle x:Name="Africa1" Canvas.Left="447" Canvas.Top="196" Width="172" Height="98" Fill="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" MouseEnter="Africa1_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5" RadiusX="107.5" RadiusY="107.5">
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="AfricaTooltip1" Style="{StaticResource CustomToolTipStyle}">
+
+                        <StackPanel>
+                            <TextBlock Text="Países de África(1)"/>
+                            <ListBox x:Name="AfricaListBox1"
+                               Style="{StaticResource ListBoxStyleMap}"
+                              ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Rectangle.ToolTip>
+            </Rectangle>
+
+            <Rectangle x:Name="Antartida" Canvas.Left="4" Canvas.Top="496" Width="999" Height="82" Fill="Transparent" HorizontalAlignment="Center" VerticalAlignment="Top" RadiusX="0" RadiusY="0" MouseEnter="Antartida_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5">
+
+                <Rectangle.ToolTip>
+                    <ToolTip x:Name="AntartidaTooltip" Style="{StaticResource CustomToolTipStyle}">
+                        <StackPanel>
+                            <TextBlock Text="Países da Antartida"/>
+                            <ListBox x:Name="AntartidaListBox"
+                                       Style="{StaticResource ListBoxStyleMap}"
+                                    ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                        </StackPanel>
+                    </ToolTip>
+                </Rectangle.ToolTip>
+            </Rectangle>
+        </Canvas>
+
+        <Rectangle x:Name="Oceania" Canvas.Left="216" Canvas.Top="248" Width="204" Height="163" Fill="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top" RadiusX="48.895" RadiusY="48.895" MouseEnter="Oceania_MouseEnter" MouseLeave="Countries_MouseLeave" RenderTransformOrigin="0.5,0.5" Margin="791,306,0,0">
+
+            <Rectangle.ToolTip>
+                <ToolTip x:Name="OceaniaTooltip" Style="{StaticResource CustomToolTipStyle}">
+                    <StackPanel>
+                        <TextBlock Text="Países de Oceânia"/>
+                        <ListBox x:Name="OceaniaListBox"
+                                  Style="{StaticResource ListBoxStyleMap}"
+                                ItemTemplate="{StaticResource ListBoxItemTemplateMap}"/>
+                    </StackPanel>
+                </ToolTip>
+            </Rectangle.ToolTip>
+        </Rectangle>
+        
+    </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock Grid.Row="3" x:Name="successText" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
+        </Grid>
+
+    </Grid>
+</UserControl>
